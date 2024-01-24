@@ -1,3 +1,31 @@
+"""
+Module defining a dictionary of countries with internationalization support.
+
+This module defines the 'COUNTRIES' dictionary, which contains information about various countries.
+It utilizes Django's 'gettext_lazy' for internationalization of country names.
+
+Usage:
+- Include this module in your Django app.
+- Access country information using the 'COUNTRIES' dictionary.
+
+Example:
+    # In your Django app's code:
+    from .countries import COUNTRIES
+
+    country_name = COUNTRIES["AF"]["name"]  # Access the name of Afghanistan with internationalization support.
+
+Attributes:
+    - COUNTRIES (dict): A dictionary containing information about various countries.
+        Each entry has a country code as the key, and a dictionary with 'name' and 'alpha3' as the values.
+
+Note:
+    The country names in the 'COUNTRIES' dictionary are wrapped with Django's 'gettext_lazy' for internationalization.
+    Make sure to include this module in your project and set up internationalization in your Django app.
+
+For more information, see Django documentation on internationalization:
+https://docs.djangoproject.com/en/5.0/topics/i18n/
+"""
+
 from django.utils.translation import gettext_lazy as _
 
 COUNTRIES = {
@@ -245,4 +273,3 @@ COUNTRIES = {
     "ZM": {"name": _("Zambia"), "alpha3": "ZMB"},
     "ZW": {"name": _("Zimbabwe"), "alpha3": "ZWE"},
 }
-
