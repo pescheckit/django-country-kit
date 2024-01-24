@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "~=5.0"
+django = ">=3.2"
 
 [dev-packages]
 django-extensions = "~=3.2.3"
