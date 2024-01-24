@@ -92,6 +92,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+        additional-packages: setuptools wheel
 
     - name: Install dependencies
       run: |
