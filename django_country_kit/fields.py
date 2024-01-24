@@ -65,6 +65,7 @@ class Country:
         """Get the alpha3 code of the country."""
         return self._countries_data.get(self._code, {}).get('alpha3', '')
 
+
 class CountryField(models.CharField):
     """
     A model field for storing country codes with internationalization support.

@@ -57,5 +57,6 @@ class AppSettings:  # pylint: disable=too-few-public-methods
                 pass
         return super().__getattribute__(attr)
 
+
 # An instance of the 'AppSettings' class for accessing app-specific settings.
 settings = AppSettings()

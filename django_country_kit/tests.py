@@ -32,6 +32,7 @@ from .widgets import CountryWidget
 
 logger = logging.getLogger(__name__)
 
+
 class CountryTests(TestCase):
     """
     Test class for the 'Country' class.

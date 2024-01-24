@@ -66,6 +66,7 @@ class ExampleForm(forms.ModelForm):
         """Meta class for ExampleForm."""
         fields = ('name', 'country')
 
+
 def index(request):
     """
     View function rendering the 'ExampleForm' in the 'dev/index.html' template.
