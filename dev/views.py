@@ -46,7 +46,10 @@ https://docs.djangoproject.com/en/5/topics/http/views/
 from django import forms
 from django.shortcuts import render
 
+from django_country_kit.fields import CountryField
 from django_country_kit.widgets import CountryWidget
+
+from .models import ExampleModel
 
 
 class ExampleForm(forms.ModelForm):
@@ -56,8 +59,8 @@ class ExampleForm(forms.ModelForm):
     Attributes:
         - country (ChoiceField): A choice field using 'CountryWidget' for handling country information.
     """
-
-    country = forms.ChoiceField(
+    country = CountryField().formfield()
+    country_2 = forms.ChoiceField(
         label='Your country',
         widget=CountryWidget(attrs={'class': 'form-control'}),
     )
@@ -65,6 +68,7 @@ class ExampleForm(forms.ModelForm):
     class Meta:
         """Meta class for ExampleForm."""
         fields = ('name', 'country')
+        model = ExampleModel
 
 
 def index(request):
@@ -77,4 +81,10 @@ def index(request):
     Returns:
         - HttpResponse: The rendered response containing the 'ExampleForm'.
     """
-    return render(request, 'dev/index.html', {"form": ExampleForm()})
+    if request.method == 'POST':
+        form = ExampleForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = ExampleForm()
+    return render(request, 'dev/index.html', {"form": form})

@@ -31,15 +31,12 @@ https://docs.djangoproject.com/en/5/ref/forms/widgets/
 
 from django import forms
 
-from .fields import Country
+from .base import Country
 
 
-class CountryWidget(forms.Select):
+class CountrySelectMixin:
     """
-    A Django form widget for rendering a dropdown list of countries.
-
-    Attributes:
-        - choices (list): The choices for the country dropdown list, taken from the 'COUNTRIES' data.
+    A mixin class to handle common functionalities for country select widgets.
     """
 
     def __init__(self, attrs=None):
@@ -52,8 +49,14 @@ class CountryWidget(forms.Select):
         # Ensure attrs is a dictionary
         attrs = attrs or {}
 
-        # Use the superclass to initialize the widget
-        super().__init__(attrs)
-
         # Populate choices based on COUNTRIES
-        self.choices = [(code, data['name']) for code, data in Country().countries_data.items()]
+        self.choices = ((code, data['name']) for code, data in Country().countries_data.items())
+
+        # Use the superclass to initialize the widget
+        super().__init__(attrs=attrs, choices=self.choices)
+
+
+class CountryWidget(CountrySelectMixin, forms.Select):
+    """
+    A Django form widget for rendering a dropdown list of countries.
+    """

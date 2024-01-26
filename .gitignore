@@ -9,6 +9,9 @@ media
 # Backup files # 
 *.bak 
 
+# Static files #
+static/
+
 # If you are using PyCharm # 
 # User-specific stuff
 .idea/**/workspace.xml

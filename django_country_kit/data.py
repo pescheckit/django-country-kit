@@ -26,9 +26,10 @@ For more information, see Django documentation on internationalization:
 https://docs.djangoproject.com/en/5.0/topics/i18n/
 """
 
+from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
-COUNTRIES = {
+DATA = {
     "AF": {"name": _("Afghanistan"), "alpha3": "AFG"},
     "AX": {"name": _("Åland Islands"), "alpha3": "ALA"},
     "AL": {"name": _("Albania"), "alpha3": "ALB"},
@@ -273,3 +274,20 @@ COUNTRIES = {
     "ZM": {"name": _("Zambia"), "alpha3": "ZMB"},
     "ZW": {"name": _("Zimbabwe"), "alpha3": "ZWE"},
 }
+
+
+def get_countries():
+    """
+    Get the 'COUNTRIES' dictionary with optional customizations.
+
+    Returns:
+        dict: A dictionary containing country information.
+    """
+    countries = getattr(settings, "OVERRIDE_COUNTRIES", DATA)
+
+    exclude_countries = getattr(settings, "EXCLUDE_COUNTRIES", [])
+    if exclude_countries:
+        for country in exclude_countries:
+            countries.pop(country, None)
+
+    return countries

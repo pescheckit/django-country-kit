@@ -32,52 +32,35 @@ https://docs.djangoproject.com/en/5.0/topics/db/models/
 https://docs.djangoproject.com/en/5.0/ref/models/fields/
 """
 
-from django.db import models
+from django import forms
+from django.db.models.fields import CharField
 
-from .data import COUNTRIES
-
-
-class Country:
-    """
-    A class representing a country with properties for accessing its name and alpha3 code.
-
-    Attributes:
-        - _countries_data (dict): A dictionary containing information about various countries.
-        - _code (str): The country code.
-    """
-
-    def __init__(self, code=None):
-        self._countries_data = COUNTRIES
-        self._code = code
-
-    @property
-    def countries_data(self):
-        """Get the 'COUNTRIES' data."""
-        return self._countries_data
-
-    @property
-    def name(self) -> str:
-        """Get the name of the country."""
-        return self._countries_data.get(self._code, {}).get('name', '')
-
-    @property
-    def alpha3(self) -> str:
-        """Get the alpha3 code of the country."""
-        return self._countries_data.get(self._code, {}).get('alpha3', '')
+from .base import Country
+from .widgets import CountryWidget
 
 
-class CountryField(models.CharField):
+class CountryField(CharField):
     """
     A model field for storing country codes with internationalization support.
 
     Attributes:
         - max_length (int): The maximum length of the country code (2 characters).
-        - choices (list): The choices for the country field, taken from the 'COUNTRIES' data.
+        - choices (generator): The choices for the country field, generated from the 'COUNTRIES' data.
     """
 
     def __init__(self, *args, **kwargs):
-        # Set max_length to 2 for country codes
-        kwargs['max_length'] = 2
-        # Use choices from the COUNTRIES data
-        kwargs['choices'] = [(code, data['name']) for code, data in Country().countries_data.items()]
+        self.countries = Country().countries_data
+        kwargs['max_length'] = max(len(code) for code in self.countries)
+        kwargs['choices'] = ((code, data['name']) for code, data in self.countries.items())
         super().__init__(*args, **kwargs)
+
+    def formfield(self, **kwargs):
+        defaults = {
+            'choices': kwargs.pop('choices', self.choices),
+            'widget': CountryWidget,
+            'choices_form_class': forms.TypedChoiceField,
+            "form_class": forms.ChoiceField,
+        }
+        defaults.update(kwargs)
+
+        return super().formfield(**defaults)
