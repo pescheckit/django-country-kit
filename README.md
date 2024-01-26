@@ -32,6 +32,13 @@ Django Country Kit is a Django app that provides country-related functionality, 
     python manage.py migrate
     ```
 
+4. Run collectstatic:
+
+    ```bash
+    python manage.py collectstatic
+    ```
+
+
 ## Usage
 
 ### Country Model Field
@@ -57,3 +64,12 @@ from django_country_kit.widgets import CountryWidget
 class YourForm(forms.Form):
     country = forms.CharField(widget=CountryWidget())
 ```
+
+### Custom settings
+
+Django Country Kit provides custom settings for further customization of country data:
+
+- `OVERRIDE_COUNTRIES`: Allows users to override specific countries with custom data.
+- `EXCLUDE_COUNTRIES`: Allows users to exclude specific countries from the available choices.
+
+You can customize these settings in your Django project's settings file to tailor the country data according to your needs.
