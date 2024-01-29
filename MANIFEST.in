@@ -1,0 +1,4 @@
+include *.rst
+include LICENSE
+include django_country_kit/locale
+exclude tox.ini
