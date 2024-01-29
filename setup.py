@@ -21,7 +21,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='http://github.com/pescheckit/django-country-kit',
-    packages=find_packages(),
+    packages=["django_country_kit"],
     include_package_data=True,
     install_requires=[
         'Django>=3.0',
