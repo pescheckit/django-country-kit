@@ -6,7 +6,7 @@ This script is used to handle the packaging and distribution of the
 and other necessary package information.
 """
 
-from setuptools import find_packages, setup
+from setuptools import setup
 
 # Using 'with' statement for safe file handling
 with open('README.md', 'r', encoding='utf-8') as f:
