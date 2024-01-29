@@ -176,7 +176,9 @@ jobs:
         run: |
           pipenv install --dev
       - name: Build package
-        run: pipenv run python -m build
+        run: |
+          pipenv shell
+          pipenv run python -m build
       - name: Publish package
         uses: pypa/gh-action-pypi-publish@v1.8.10
         with:
