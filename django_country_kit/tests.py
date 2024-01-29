@@ -25,10 +25,11 @@ https://docs.djangoproject.com/en/3.2/topics/testing/
 import logging
 
 from django.conf import settings
+from django.core import exceptions
 from django.test import TestCase, override_settings
 
-from .fields import CountryField
-from .widgets import CountryWidget
+from .data import DATA
+from .fields import CountryField, MultiSelectList
 
 logger = logging.getLogger(__name__)
 
@@ -42,6 +43,8 @@ class CountryFieldTests(TestCase):
         - test_country_field_choices(): Test that choices are populated from COUNTRIES.
         - test_country_field_override_countries(): Test behavior when using OVERRIDE_COUNTRIES setting.
         - test_country_field_exclude_countries(): Test behavior when using EXCLUDE_COUNTRIES setting.
+        - test_country_field_get_choices_method(): Test the overridden get_choices method.
+        - test_country_field_validate_method(): Test the overridden validate method for multiple selection.
     """
 
     def test_country_field_max_length(self):
@@ -49,7 +52,7 @@ class CountryFieldTests(TestCase):
         Test that max_length is set to the length of the longest country code.
         """
         field = CountryField()
-        max_length = max(len(code) for code in field.countries_data)
+        max_length = max(len(code) for code in field.countries)
         self.assertEqual(field.max_length, max_length)
         logger.info("test_country_field_max_length ✓")
 
@@ -59,7 +62,7 @@ class CountryFieldTests(TestCase):
         """
         field = CountryField()
         choices = field.choices
-        self.assertEqual(len(choices), len(field.countries_data))
+        self.assertEqual(len(choices), len(field.countries))
         logger.info("test_country_field_choices ✓")
 
     @override_settings(OVERRIDE_COUNTRIES={"US": {"name": "United States", "alpha3": "USA"}})
@@ -77,23 +80,50 @@ class CountryFieldTests(TestCase):
         Test behavior when using EXCLUDE_COUNTRIES setting.
         """
         field = CountryField()
-        self.assertEqual(len(field.choices), len(field.countries_data) - len(settings.EXCLUDE_COUNTRIES))
+        self.assertEqual(len(field.choices), len(DATA) - len(settings.EXCLUDE_COUNTRIES))
         logger.info("test_country_field_exclude_countries ✓")
 
+    def test_country_field_get_choices_method(self):
+        """
+        Test the overridden get_choices method.
+        """
+        field = CountryField()
+        choices = field.choices
+        self.assertIsInstance(choices, list)
+        logger.info("test_country_field_get_choices_method ✓")
 
-class CountryWidgetTests(TestCase):
+    def test_country_field_validate_method(self):
+        """
+        Test the overridden validate method for multiple selection.
+        """
+        field = CountryField(multiple=True)
+        # Test valid selection
+        valid_value = ["US", "CA"]
+        try:
+            field.validate(valid_value, None)
+        except exceptions.ValidationError:
+            self.fail("Validation failed for valid multiple selection.")
+        # Test invalid selection
+        invalid_value = ["XX"]
+        with self.assertRaises(exceptions.ValidationError):
+            field.validate(invalid_value, None)
+        logger.info("test_country_field_validate_method ✓")
+
+
+class MultiSelectListTests(TestCase):
     """
-    Test class for the 'CountryWidget' form widget.
+    Test class for the 'MultiSelectList' custom list type.
 
     Methods:
-        - test_country_widget_choices(): Test that choices are populated from COUNTRIES for the widget.
+        - test_multiselect_list_string_representation(): Test string representation of MultiSelectList.
     """
 
-    def test_country_widget_choices(self):
+    def test_multiselect_list_string_representation(self):
         """
-        Test that choices are populated from COUNTRIES for the widget.
+        Test string representation of MultiSelectList.
         """
-        widget = CountryWidget()
-        choices = list(widget.choices)
-        self.assertEqual(len(choices), len(widget.countries_data))
-        logger.info("test_country_widget_choices ✓")
+        choices = {"US": "United States", "CA": "Canada"}
+        value = ["US", "CA"]
+        multi_select_list = MultiSelectList(choices, value)
+        self.assertEqual(str(multi_select_list), "United States, Canada")
+        logger.info("test_multiselect_list_string_representation ✓")

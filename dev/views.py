@@ -47,7 +47,6 @@ from django import forms
 from django.shortcuts import render
 
 from django_country_kit.fields import CountryField
-from django_country_kit.widgets import CountryWidget
 
 from .models import ExampleModel
 
@@ -60,14 +59,11 @@ class ExampleForm(forms.ModelForm):
         - country (ChoiceField): A choice field using 'CountryWidget' for handling country information.
     """
     country = CountryField().formfield()
-    country_2 = forms.ChoiceField(
-        label='Your country',
-        widget=CountryWidget(attrs={'class': 'form-control'}),
-    )
+    multiple_country = CountryField(multiple=True).formfield()
 
     class Meta:
         """Meta class for ExampleForm."""
-        fields = ('name', 'country')
+        fields = ('name', 'multiple_country')
         model = ExampleModel
 
 

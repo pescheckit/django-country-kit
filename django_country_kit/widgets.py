@@ -60,3 +60,9 @@ class CountryWidget(CountrySelectMixin, forms.Select):
     """
     A Django form widget for rendering a dropdown list of countries.
     """
+
+
+class MultipleCountryWidget(CountrySelectMixin, forms.SelectMultiple):
+    """
+    A Django form widget for rendering a dropdown list of countries.
+    """

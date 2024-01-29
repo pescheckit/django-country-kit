@@ -287,7 +287,10 @@ def get_countries():
 
     exclude_countries = getattr(settings, "EXCLUDE_COUNTRIES", [])
     if exclude_countries:
-        for country in exclude_countries:
-            countries.pop(country, None)
+        countries = {code: name for code, name in countries.items() if code not in exclude_countries}
+
+    include_countries = getattr(settings, "INCLUDE_COUNTRIES", [])
+    if include_countries:
+        countries = countries.update(include_countries)
 
     return countries

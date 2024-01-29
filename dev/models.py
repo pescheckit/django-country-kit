@@ -50,7 +50,8 @@ class ExampleModel(models.Model):
         - country (CountryField): A custom field from Django Country Kit for handling country information.
     """
     name = models.CharField(max_length=255)
-    country = CountryField()
+    multiple_country = CountryField(multiple=True)
+    country = CountryField(blank=True, null=True)
 
     def __str__(self):
         """

@@ -9,10 +9,9 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-import sys, os
+import os
+import sys
 from pathlib import Path
-
-from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -153,11 +152,3 @@ LOGGING = {
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
-
-OVERRIDE_COUNTRIES = {
-    "AF": {"name": _("Afghanistan"), "alpha3": "AFG"},
-    "AX": {"name": _("Åland Islands"), "alpha3": "ALA"},
-    "AL": {"name": _("Albania"), "alpha3": "ALB"},
-}
-
-EXCLUDE_COUNTRIES = ["AX"]
