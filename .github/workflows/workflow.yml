@@ -173,12 +173,13 @@ jobs:
           python-version: '3.x'
       - name: Install Pipenv
         run: python -m pip install --upgrade pipenv
+      - name: Install wheel and virtual env
+        run: |
+          apt update
+          apt install python3-wheel python3-virtualenv
       - name: Install dependencies with Pipenv
         run: |
           pipenv install --dev
-      - name: Install wheel
-        run: |
-          pipenv run pip install wheel
       - name: Build package
         run: |
           python setup.py sdist bdist_wheel
