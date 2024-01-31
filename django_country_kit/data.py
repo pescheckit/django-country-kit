@@ -295,9 +295,6 @@ def get_countries():
 
     include_countries = getattr(settings, "INCLUDE_COUNTRIES", [])
     if include_countries:
-        if sys.version_info >= (3, 9):
-            countries = countries | include_countries
-        else:
-            countries = {**countries, **include_countries}
+        countries = countries | include_countries
 
     return dict(sorted(countries.items(), key=lambda x: x[1]['name']))
