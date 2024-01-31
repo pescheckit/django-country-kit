@@ -25,8 +25,6 @@ Note:
 For more information, see Django documentation on internationalization:
 https://docs.djangoproject.com/en/5.0/topics/i18n/
 """
-import sys
-
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
