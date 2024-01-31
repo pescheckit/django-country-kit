@@ -86,6 +86,7 @@ DATA = {
     "CI": {"name": _("Cote D'Ivoire"), "alpha3": "CIV"},
     "HR": {"name": _("Croatia"), "alpha3": "HRV"},
     "CU": {"name": _("Cuba"), "alpha3": "CUB"},
+    "CW": {"name": _("Curaçao"), "alpha3": "CUW"},
     "CY": {"name": _("Cyprus"), "alpha3": "CYP"},
     "CZ": {"name": _("Czech Republic"), "alpha3": "CZE"},
     "DK": {"name": _("Denmark"), "alpha3": "DNK"},
@@ -147,6 +148,7 @@ DATA = {
     "KI": {"name": _("Kiribati"), "alpha3": "KIR"},
     "KP": {"name": _("Korea, Democratic People's Republic of"), "alpha3": "PRK"},
     "KR": {"name": _("Korea, Republic of"), "alpha3": "KOR"},
+    "XK": {"name": _("Kosovo"), "alpha3": "XKX"},
     "KW": {"name": _("Kuwait"), "alpha3": "KWT"},
     "KG": {"name": _("Kyrgyzstan"), "alpha3": "KGZ"},
     "LA": {"name": _("Lao People's Democratic Republic"), "alpha3": "LAO"},
@@ -176,6 +178,7 @@ DATA = {
     "MD": {"name": _("Moldova, Republic of"), "alpha3": "MDA"},
     "MC": {"name": _("Monaco"), "alpha3": "MCO"},
     "MN": {"name": _("Mongolia"), "alpha3": "MNG"},
+    "ME": {"name": _("Montenegro"), "alpha3": "MNE"},
     "MS": {"name": _("Montserrat"), "alpha3": "MSR"},
     "MA": {"name": _("Morocco"), "alpha3": "MAR"},
     "MZ": {"name": _("Mozambique"), "alpha3": "MOZ"},
@@ -222,7 +225,7 @@ DATA = {
     "ST": {"name": _("Sao Tome and Principe"), "alpha3": "STP"},
     "SA": {"name": _("Saudi Arabia"), "alpha3": "SAU"},
     "SN": {"name": _("Senegal"), "alpha3": "SEN"},
-    "CS": {"name": _("Serbia and Montenegro"), "alpha3": "SCG"},
+    "RS": {"name": _("Serbia"), "alpha3": "SRB"},
     "SC": {"name": _("Seychelles"), "alpha3": "SYC"},
     "SL": {"name": _("Sierra Leone"), "alpha3": "SLE"},
     "SG": {"name": _("Singapore"), "alpha3": "SGP"},
@@ -291,6 +294,6 @@ def get_countries():
 
     include_countries = getattr(settings, "INCLUDE_COUNTRIES", [])
     if include_countries:
-        countries = countries.update(include_countries)
+        countries = countries | include_countries
 
-    return countries
+    return dict(sorted(countries.items(), key=lambda x: x[1]['name']))
