@@ -29,7 +29,7 @@ class Country:
         - _code (str): The country code.
     """
 
-    def __init__(self, code=None, custom_countries=None):
+    def __init__(self, code=None, name=None, custom_countries=None):
         """
         Initialize a Country instance.
 
@@ -41,7 +41,11 @@ class Country:
             self._countries_data = custom_countries
         else:
             self._countries_data = get_countries()
-        self._code = code
+
+        if name:
+            self._code = self.get_code_from_name(name)
+        elif code:
+            self._code = code
 
     @property
     def countries_data(self):
@@ -54,6 +58,26 @@ class Country:
         return self._countries_data.get(self._code, {}).get('name', '')
 
     @property
+    def code(self) -> str:
+        """Get the code of the country."""
+        return self._code
+
+    @property
     def alpha3(self) -> str:
         """Get the alpha3 code of the country."""
         return self._countries_data.get(self._code, {}).get('alpha3', '')
+
+    def get_code_from_name(self, name: str) -> str:
+        """
+        Get the country code from the country name.
+
+        Args:
+            name (str): The name of the country.
+
+        Returns:
+            str: The country code.
+        """
+        for code, data in self._countries_data.items():
+            if data['name'] == name:
+                return code
+        return ''

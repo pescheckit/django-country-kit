@@ -25,6 +25,7 @@ Note:
 For more information, see Django documentation on internationalization:
 https://docs.djangoproject.com/en/5.0/topics/i18n/
 """
+import sys
 
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
@@ -294,6 +295,9 @@ def get_countries():
 
     include_countries = getattr(settings, "INCLUDE_COUNTRIES", [])
     if include_countries:
-        countries = countries | include_countries
+        if sys.version_info >= (3, 9):
+            countries = countries | include_countries
+        else:
+            countries = {**countries, **include_countries}
 
     return dict(sorted(countries.items(), key=lambda x: x[1]['name']))

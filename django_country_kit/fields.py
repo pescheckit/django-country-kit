@@ -154,9 +154,13 @@ class CountryField(CharField):
         return forms.TypedChoiceField(**defaults)
 
     def get_prep_value(self, value):
+        if not self.multiple:
+            return super().get_prep_value(value)
         return '' if value is None else ",".join(map(str, value))
 
     def get_db_prep_value(self, value, connection, prepared=False):
+        if not self.multiple:
+            return super().get_db_prep_value(value, connection, prepared)
         if not prepared and not isinstance(value, str):
             value = self.get_prep_value(value)
         return value
