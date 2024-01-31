@@ -13,7 +13,7 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    if: github.event_name != 'release' && github.event_name != 'pull_request'
+    if: github.event_name != 'release' && github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     strategy:
       matrix:
         python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
@@ -45,7 +45,7 @@ jobs:
 
   build_django_50:
     runs-on: ubuntu-latest
-    if: github.event_name != 'release' && github.event_name != 'pull_request'
+    if: github.event_name != 'release' && github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     needs: lint
     strategy:
       matrix:
@@ -83,7 +83,7 @@ jobs:
 
   build_django_42:
     runs-on: ubuntu-latest
-    if: github.event_name != 'release' && github.event_name != 'pull_request'
+    if: github.event_name != 'release' && github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     strategy:
       matrix:
         python-version: ["3.8", "3.9"]
@@ -122,7 +122,7 @@ jobs:
 
   build_django_32:
     runs-on: ubuntu-latest
-    if: github.event_name != 'release' && github.event_name != 'pull_request'
+    if: github.event_name != 'release' && github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     strategy:
       matrix:
         python-version: ["3.7", "3.8", "3.9"]
