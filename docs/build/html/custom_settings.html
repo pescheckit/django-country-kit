@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Custom Settings &#8212; django-country-kit 0.0.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=47de8214"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Development" href="development.html" />
+    <link rel="prev" title="Usage" href="usage.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="custom-settings">
+<h1>Custom Settings<a class="headerlink" href="#custom-settings" title="Link to this heading">¶</a></h1>
+<p>Django Country Kit provides custom settings for further customization of country data:</p>
+<ul class="simple">
+<li><p><strong>OVERRIDE_COUNTRIES</strong>: Allows users to override specific countries with custom data.</p></li>
+<li><p><strong>EXCLUDE_COUNTRIES</strong>: Allows users to exclude specific countries from the available choices.</p></li>
+<li><p><strong>INCLUDE_COUNTRIES</strong>: Allows users to include specific countries in the available choices.</p></li>
+</ul>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
+<section id="override-countries">
+<h3>OVERRIDE_COUNTRIES<a class="headerlink" href="#override-countries" title="Link to this heading">¶</a></h3>
+<p>To override specific countries with custom data, you can define the <code class="docutils literal notranslate"><span class="pre">OVERRIDE_COUNTRIES</span></code> setting in your Django project’s settings file. Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># settings.py</span>
+
+<span class="n">OVERRIDE_COUNTRIES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;US&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;United States of America&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha3&#39;</span><span class="p">:</span><span class="s1">&#39;USA&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;GB&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha3&#39;</span><span class="p">:</span><span class="s1">&#39;GBR&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;CA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Canada&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha3&#39;</span><span class="p">:</span><span class="s1">&#39;CAN&#39;</span><span class="p">}</span>
+    <span class="c1"># Add more overrides as needed</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, the names of the countries with codes ‘US’, ‘GB’, and ‘CA’ will be overridden with custom names.</p>
+</section>
+<section id="exclude-countries">
+<h3>EXCLUDE_COUNTRIES<a class="headerlink" href="#exclude-countries" title="Link to this heading">¶</a></h3>
+<p>To exclude specific countries from the available choices, you can define the <code class="docutils literal notranslate"><span class="pre">EXCLUDE_COUNTRIES</span></code> setting in your Django project’s settings file. Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># settings.py</span>
+
+<span class="n">EXCLUDE_COUNTRIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;GB&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In this example, the countries with codes ‘US’, ‘GB’, and ‘CA’ will be excluded from the available choices.</p>
+</section>
+<section id="include-countries">
+<h3>INCLUDE_COUNTRIES<a class="headerlink" href="#include-countries" title="Link to this heading">¶</a></h3>
+<p>To include specific countries in the available choices, you can define the <code class="docutils literal notranslate"><span class="pre">INCLUDE_COUNTRIES</span></code> setting in your Django project’s settings file. Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># settings.py</span>
+
+<span class="n">INCLUDE_COUNTRIES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;US&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;United States of America&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha3&#39;</span><span class="p">:</span><span class="s1">&#39;USA&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;GB&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha3&#39;</span><span class="p">:</span><span class="s1">&#39;GBR&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;CA&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Canada&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha3&#39;</span><span class="p">:</span><span class="s1">&#39;CAN&#39;</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, only the countries with codes ‘US’, ‘GB’, and ‘CA’ will be included in the available choices.</p>
+<p>You can customize these settings in your Django project’s settings file to tailor the country data according to your needs.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">django-country-kit</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Custom Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="usage.html" title="previous chapter">Usage</a></li>
+      <li>Next: <a href="development.html" title="next chapter">Development</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, uberfresh, pescheck.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/custom_settings.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
