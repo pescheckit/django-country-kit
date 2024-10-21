@@ -76,7 +76,7 @@ jobs:
       run: python setup.py sdist
 
     - name: Archive distribution package
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: dist
         path: dist/*.tar.gz
@@ -115,7 +115,7 @@ jobs:
       run: python setup.py sdist
 
     - name: Archive distribution package
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: dist
         path: dist/*.tar.gz
@@ -154,7 +154,7 @@ jobs:
       run: python setup.py sdist
 
     - name: Archive distribution package
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: dist
         path: dist/*.tar.gz
