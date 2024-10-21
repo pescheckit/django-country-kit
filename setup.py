@@ -14,7 +14,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='django-country-kit',
-    version="0.0.3",
+    version="0.0.4",
     author='Pescheck IT',
     author_email='devops@pescheck.io',
     description='Countries for django',
