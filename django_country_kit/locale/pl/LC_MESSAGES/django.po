@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-21 14:55+0000\n"
+"POT-Creation-Date: 2024-10-21 14:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,31 +15,31 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: django_country_kit/data.py:34
 msgid "Afghanistan"
-msgstr "Afghanistan"
+msgstr "Afganistan"
 
 #: django_country_kit/data.py:35
 msgid "Åland Islands"
-msgstr "Åland-Inseln"
+msgstr "Wyspy Alandzkie"
 
 #: django_country_kit/data.py:36
 msgid "Albania"
-msgstr "Albanien"
+msgstr "Albania"
 
 #: django_country_kit/data.py:37
 msgid "Algeria"
-msgstr "Algerien"
+msgstr "Algieria"
 
 #: django_country_kit/data.py:38
 msgid "American Samoa"
-msgstr "Amerikanisch-Samoa"
+msgstr "Samoa Amerykańskie"
 
 #: django_country_kit/data.py:39
 msgid "Andorra"
-msgstr "Andorra"
+msgstr "Andora"
 
 #: django_country_kit/data.py:40
 msgid "Angola"
@@ -51,19 +51,19 @@ msgstr "Anguilla"
 
 #: django_country_kit/data.py:42
 msgid "Antarctica"
-msgstr "Antarktis"
+msgstr "Antarktyda"
 
 #: django_country_kit/data.py:43
 msgid "Antigua and Barbuda"
-msgstr "Antigua und Barbuda"
+msgstr "Antigua i Barbuda"
 
 #: django_country_kit/data.py:44
 msgid "Argentina"
-msgstr "Argentinien"
+msgstr "Argentyna"
 
 #: django_country_kit/data.py:45
 msgid "Armenia"
-msgstr "Armenien"
+msgstr "Armenia"
 
 #: django_country_kit/data.py:46
 msgid "Aruba"
@@ -71,27 +71,27 @@ msgstr "Aruba"
 
 #: django_country_kit/data.py:47
 msgid "Australia"
-msgstr "Australien"
+msgstr "Australia"
 
 #: django_country_kit/data.py:48
 msgid "Austria"
-msgstr "Österreich"
+msgstr "Austria"
 
 #: django_country_kit/data.py:49
 msgid "Azerbaijan"
-msgstr "Aserbaidschan"
+msgstr "Azerbejdżan"
 
 #: django_country_kit/data.py:50
 msgid "Bahamas"
-msgstr "Bahamas"
+msgstr "Bahamy"
 
 #: django_country_kit/data.py:51
 msgid "Bahrain"
-msgstr "Bahrain"
+msgstr "Bahrajn"
 
 #: django_country_kit/data.py:52
 msgid "Bangladesh"
-msgstr "Bangladesch"
+msgstr "Bangladesz"
 
 #: django_country_kit/data.py:53
 msgid "Barbados"
@@ -99,11 +99,11 @@ msgstr "Barbados"
 
 #: django_country_kit/data.py:54
 msgid "Belarus"
-msgstr "Weißrussland"
+msgstr "Białoruś"
 
 #: django_country_kit/data.py:55
 msgid "Belgium"
-msgstr "Belgien"
+msgstr "Belgia"
 
 #: django_country_kit/data.py:56
 msgid "Belize"
@@ -115,7 +115,7 @@ msgstr "Benin"
 
 #: django_country_kit/data.py:58
 msgid "Bermuda"
-msgstr "Bermuda"
+msgstr "Bermudy"
 
 #: django_country_kit/data.py:59
 msgid "Bhutan"
@@ -123,11 +123,11 @@ msgstr "Bhutan"
 
 #: django_country_kit/data.py:60
 msgid "Bolivia"
-msgstr "Bolivien"
+msgstr "Boliwia"
 
 #: django_country_kit/data.py:61
 msgid "Bosnia and Herzegovina"
-msgstr "Bosnien und Herzegowina"
+msgstr "Bośnia i Hercegowina"
 
 #: django_country_kit/data.py:62
 msgid "Botswana"
@@ -135,15 +135,15 @@ msgstr "Botswana"
 
 #: django_country_kit/data.py:63
 msgid "Bouvet Island"
-msgstr "Bouvetinsel"
+msgstr "Wyspa Bouveta"
 
 #: django_country_kit/data.py:64
 msgid "Brazil"
-msgstr "Brasilien"
+msgstr "Brazylia"
 
 #: django_country_kit/data.py:65
 msgid "British Indian Ocean Territory"
-msgstr "Britisches Territorium im Indischen Ozean"
+msgstr "Brytyjskie Terytorium Oceanu Indyjskiego"
 
 #: django_country_kit/data.py:66
 msgid "Brunei Darussalam"
@@ -151,7 +151,7 @@ msgstr "Brunei Darussalam"
 
 #: django_country_kit/data.py:67
 msgid "Bulgaria"
-msgstr "Bulgarien"
+msgstr "Bułgaria"
 
 #: django_country_kit/data.py:68
 msgid "Burkina Faso"
@@ -163,7 +163,7 @@ msgstr "Burundi"
 
 #: django_country_kit/data.py:70
 msgid "Cambodia"
-msgstr "Kambodscha"
+msgstr "Kambodża"
 
 #: django_country_kit/data.py:71
 msgid "Cameroon"
@@ -175,19 +175,19 @@ msgstr "Kanada"
 
 #: django_country_kit/data.py:73
 msgid "Cape Verde"
-msgstr "Kap Verde"
+msgstr "Republika Zielonego Przylądka"
 
 #: django_country_kit/data.py:74
 msgid "Cayman Islands"
-msgstr "Cayman-Inseln"
+msgstr "Kajmany"
 
 #: django_country_kit/data.py:75
 msgid "Central African Republic"
-msgstr "Zentralafrikanische Republik"
+msgstr "Republika Środkowoafrykańska"
 
 #: django_country_kit/data.py:76
 msgid "Chad"
-msgstr "Tschad"
+msgstr "Czad"
 
 #: django_country_kit/data.py:77
 msgid "Chile"
@@ -195,23 +195,23 @@ msgstr "Chile"
 
 #: django_country_kit/data.py:78
 msgid "China"
-msgstr "China"
+msgstr "Chiny"
 
 #: django_country_kit/data.py:79
 msgid "Christmas Island"
-msgstr "Weihnachtsinsel"
+msgstr "Wyspa Bożego Narodzenia"
 
 #: django_country_kit/data.py:80
 msgid "Cocos (Keeling) Islands"
-msgstr "Cocos (Keeling) Inseln"
+msgstr "Wyspy Kokosowe (Keelinga)"
 
 #: django_country_kit/data.py:81
 msgid "Colombia"
-msgstr "Kolumbien"
+msgstr "Kolumbia"
 
 #: django_country_kit/data.py:82
 msgid "Comoros"
-msgstr "Komoren"
+msgstr "Komory"
 
 #: django_country_kit/data.py:83
 msgid "Congo"
@@ -219,23 +219,23 @@ msgstr "Kongo"
 
 #: django_country_kit/data.py:84
 msgid "Congo, The Democratic Republic of the"
-msgstr "Kongo, Demokratische Republik"
+msgstr "Demokratyczna Republika Konga"
 
 #: django_country_kit/data.py:85
 msgid "Cook Islands"
-msgstr "Cookinseln"
+msgstr "Wyspy Cooka"
 
 #: django_country_kit/data.py:86
 msgid "Costa Rica"
-msgstr "Costa Rica"
+msgstr "Kostaryka"
 
 #: django_country_kit/data.py:87
 msgid "Cote D'Ivoire"
-msgstr "Elfenbeinküste"
+msgstr "Wybrzeże Kości Słoniowej"
 
 #: django_country_kit/data.py:88
 msgid "Croatia"
-msgstr "Kroatien"
+msgstr "Chorwacja"
 
 #: django_country_kit/data.py:89
 msgid "Cuba"
@@ -247,91 +247,91 @@ msgstr "Curaçao"
 
 #: django_country_kit/data.py:91
 msgid "Cyprus"
-msgstr "Zypern"
+msgstr "Cypr"
 
 #: django_country_kit/data.py:92
 msgid "Czech Republic"
-msgstr "Tschechische Republik"
+msgstr "Republika Czeska"
 
 #: django_country_kit/data.py:93
 msgid "Denmark"
-msgstr "Dänemark"
+msgstr "Dania"
 
 #: django_country_kit/data.py:94
 msgid "Djibouti"
-msgstr "Dschibuti"
+msgstr "Dżibuti"
 
 #: django_country_kit/data.py:95
 msgid "Dominica"
-msgstr "Dominica"
+msgstr "Dominika"
 
 #: django_country_kit/data.py:96
 msgid "Dominican Republic"
-msgstr "Dominikanische Republik"
+msgstr "Republika Dominikańska"
 
 #: django_country_kit/data.py:97
 msgid "Ecuador"
-msgstr "Ecuador"
+msgstr "Ekwador"
 
 #: django_country_kit/data.py:98
 msgid "Egypt"
-msgstr "Ägypten"
+msgstr "Egipt"
 
 #: django_country_kit/data.py:99
 msgid "El Salvador"
-msgstr "El Salvador"
+msgstr "Salwador"
 
 #: django_country_kit/data.py:100
 msgid "Equatorial Guinea"
-msgstr "Äquatorialguinea"
+msgstr "Gwinea Równikowa"
 
 #: django_country_kit/data.py:101
 msgid "Eritrea"
-msgstr "Eritrea"
+msgstr "Erytrea"
 
 #: django_country_kit/data.py:102
 msgid "Estonia"
-msgstr "Estland"
+msgstr "Estonia"
 
 #: django_country_kit/data.py:103
 msgid "Ethiopia"
-msgstr "Äthiopien"
+msgstr "Etiopia"
 
 #: django_country_kit/data.py:104
 msgid "Falkland Islands (Malvinas)"
-msgstr "Falklandinseln (Malvinas)"
+msgstr "Falklandy (Malwiny)"
 
 #: django_country_kit/data.py:105
 msgid "Faroe Islands"
-msgstr "Färöer Inseln"
+msgstr "Wyspy Owcze"
 
 #: django_country_kit/data.py:106
 msgid "Fiji"
-msgstr "Fidschi"
+msgstr "Fidżi"
 
 #: django_country_kit/data.py:107
 msgid "Finland"
-msgstr "Finnland"
+msgstr "Finlandia"
 
 #: django_country_kit/data.py:108
 msgid "France"
-msgstr "Frankreich"
+msgstr "Francja"
 
 #: django_country_kit/data.py:109
 msgid "French Guiana"
-msgstr "Französisch-Guayana"
+msgstr "Gujana Francuska"
 
 #: django_country_kit/data.py:110
 msgid "French Polynesia"
-msgstr "Französisch-Polynesien"
+msgstr "Polinezja Francuska"
 
 #: django_country_kit/data.py:111
 msgid "French Southern Territories"
-msgstr "Französische Süd- und Antarktisgebiete"
+msgstr "Francuskie Terytoria Południowe"
 
 #: django_country_kit/data.py:112
 msgid "Gabon"
-msgstr "Gabun"
+msgstr "Gabon"
 
 #: django_country_kit/data.py:113
 msgid "Gambia"
@@ -339,11 +339,11 @@ msgstr "Gambia"
 
 #: django_country_kit/data.py:114
 msgid "Georgia"
-msgstr "Georgien"
+msgstr "Gruzja"
 
 #: django_country_kit/data.py:115
 msgid "Germany"
-msgstr "Deutschland"
+msgstr "Niemcy"
 
 #: django_country_kit/data.py:116
 msgid "Ghana"
@@ -355,11 +355,11 @@ msgstr "Gibraltar"
 
 #: django_country_kit/data.py:118
 msgid "Greece"
-msgstr "Griechenland"
+msgstr "Grecja"
 
 #: django_country_kit/data.py:119
 msgid "Greenland"
-msgstr "Grönland"
+msgstr "Grenlandia"
 
 #: django_country_kit/data.py:120
 msgid "Grenada"
@@ -367,7 +367,7 @@ msgstr "Grenada"
 
 #: django_country_kit/data.py:121
 msgid "Guadeloupe"
-msgstr "Guadeloupe"
+msgstr "Gwadelupa"
 
 #: django_country_kit/data.py:122
 msgid "Guam"
@@ -375,7 +375,7 @@ msgstr "Guam"
 
 #: django_country_kit/data.py:123
 msgid "Guatemala"
-msgstr "Guatemala"
+msgstr "Gwatemala"
 
 #: django_country_kit/data.py:124
 msgid "Guernsey"
@@ -383,15 +383,15 @@ msgstr "Guernsey"
 
 #: django_country_kit/data.py:125
 msgid "Guinea"
-msgstr "Guinea"
+msgstr "Gwinea"
 
 #: django_country_kit/data.py:126
 msgid "Guinea-Bissau"
-msgstr "Guinea-Bissau"
+msgstr "Gwinea Bissau"
 
 #: django_country_kit/data.py:127
 msgid "Guyana"
-msgstr "Guyana"
+msgstr "Gujana"
 
 #: django_country_kit/data.py:128
 msgid "Haiti"
@@ -399,11 +399,11 @@ msgstr "Haiti"
 
 #: django_country_kit/data.py:129
 msgid "Heard Island and Mcdonald Islands"
-msgstr "Heard und McDonaldinseln"
+msgstr "Wyspa Heard i Wyspy McDonalda"
 
 #: django_country_kit/data.py:130
 msgid "Holy See (Vatican City State)"
-msgstr "Heiliger Stuhl (Vatikanstadt)"
+msgstr "Stolica Apostolska (państwo Watykańskie)"
 
 #: django_country_kit/data.py:131
 msgid "Honduras"
@@ -415,23 +415,23 @@ msgstr "Hongkong"
 
 #: django_country_kit/data.py:133
 msgid "Hungary"
-msgstr "Ungarn"
+msgstr "Węgry"
 
 #: django_country_kit/data.py:134
 msgid "Iceland"
-msgstr "Island"
+msgstr "Islandia"
 
 #: django_country_kit/data.py:135
 msgid "India"
-msgstr "Indien"
+msgstr "Indie"
 
 #: django_country_kit/data.py:136
 msgid "Indonesia"
-msgstr "Indonesien"
+msgstr "Indonezja"
 
 #: django_country_kit/data.py:137
 msgid "Iran, Islamic Republic Of"
-msgstr "Iran, Islamische Republik"
+msgstr "Iran, Islamska Republika"
 
 #: django_country_kit/data.py:138
 msgid "Iraq"
@@ -439,27 +439,27 @@ msgstr "Irak"
 
 #: django_country_kit/data.py:139
 msgid "Ireland"
-msgstr "Irland"
+msgstr "Irlandia"
 
 #: django_country_kit/data.py:140
 msgid "Isle of Man"
-msgstr "Insel Man"
+msgstr "Wyspa Man"
 
 #: django_country_kit/data.py:141
 msgid "Israel"
-msgstr "Israel"
+msgstr "Izrael"
 
 #: django_country_kit/data.py:142
 msgid "Italy"
-msgstr "Italien"
+msgstr "Włochy"
 
 #: django_country_kit/data.py:143
 msgid "Jamaica"
-msgstr "Jamaika"
+msgstr "Jamajka"
 
 #: django_country_kit/data.py:144
 msgid "Japan"
-msgstr "Japan"
+msgstr "Japonia"
 
 #: django_country_kit/data.py:145
 msgid "Jersey"
@@ -467,11 +467,11 @@ msgstr "Jersey"
 
 #: django_country_kit/data.py:146
 msgid "Jordan"
-msgstr "Jordanien"
+msgstr "Jordania"
 
 #: django_country_kit/data.py:147
 msgid "Kazakhstan"
-msgstr "Kasachstan"
+msgstr "Kazachstan"
 
 #: django_country_kit/data.py:148
 msgid "Kenya"
@@ -483,35 +483,35 @@ msgstr "Kiribati"
 
 #: django_country_kit/data.py:150
 msgid "Korea, Democratic People's Republic of"
-msgstr "Korea, Demokratische Volksrepublik"
+msgstr "Korea, Ludowo-Demokratyczna Republika"
 
 #: django_country_kit/data.py:151
 msgid "Korea, Republic of"
-msgstr "Korea, Republik"
+msgstr "Korea, Republika"
 
 #: django_country_kit/data.py:152
 msgid "Kosovo"
-msgstr "Kosovo"
+msgstr "Kosowo"
 
 #: django_country_kit/data.py:153
 msgid "Kuwait"
-msgstr "Kuwait"
+msgstr "Kuwejt"
 
 #: django_country_kit/data.py:154
 msgid "Kyrgyzstan"
-msgstr "Kirgisistan"
+msgstr "Kirgistan"
 
 #: django_country_kit/data.py:155
 msgid "Lao People's Democratic Republic"
-msgstr "Demokratische Volksrepublik Laos"
+msgstr "Laotańska Republika Ludowo-Demokratyczna"
 
 #: django_country_kit/data.py:156
 msgid "Latvia"
-msgstr "Lettland"
+msgstr "Łotwa"
 
 #: django_country_kit/data.py:157
 msgid "Lebanon"
-msgstr "Libanon"
+msgstr "Liban"
 
 #: django_country_kit/data.py:158
 msgid "Lesotho"
@@ -523,7 +523,7 @@ msgstr "Liberia"
 
 #: django_country_kit/data.py:160
 msgid "Libyan Arab Jamahiriya"
-msgstr "Libysch-Arabische Dschamahirija"
+msgstr "Libijska Arabska Jamahiriya"
 
 #: django_country_kit/data.py:161
 msgid "Liechtenstein"
@@ -531,19 +531,19 @@ msgstr "Liechtenstein"
 
 #: django_country_kit/data.py:162
 msgid "Lithuania"
-msgstr "Litauen"
+msgstr "Litwa"
 
 #: django_country_kit/data.py:163
 msgid "Luxembourg"
-msgstr "Luxemburg"
+msgstr "Luksemburg"
 
 #: django_country_kit/data.py:164
 msgid "Macao"
-msgstr "Macao"
+msgstr "Makau"
 
 #: django_country_kit/data.py:165
 msgid "Macedonia, The Former Yugoslav Republic of"
-msgstr "Mazedonien, ehemalige jugoslawische Republik"
+msgstr "Macedonia, Była Jugosłowiańska Republika"
 
 #: django_country_kit/data.py:166
 msgid "Madagascar"
@@ -555,11 +555,11 @@ msgstr "Malawi"
 
 #: django_country_kit/data.py:168
 msgid "Malaysia"
-msgstr "Malaysia"
+msgstr "Malezja"
 
 #: django_country_kit/data.py:169
 msgid "Maldives"
-msgstr "Malediven"
+msgstr "Malediwy"
 
 #: django_country_kit/data.py:170
 msgid "Mali"
@@ -571,15 +571,15 @@ msgstr "Malta"
 
 #: django_country_kit/data.py:172
 msgid "Marshall Islands"
-msgstr "Marshallinseln"
+msgstr "Wyspy Marshalla"
 
 #: django_country_kit/data.py:173
 msgid "Martinique"
-msgstr "Martinique"
+msgstr "Martynika"
 
 #: django_country_kit/data.py:174
 msgid "Mauritania"
-msgstr "Mauretanien"
+msgstr "Mauretania"
 
 #: django_country_kit/data.py:175
 msgid "Mauritius"
@@ -587,31 +587,31 @@ msgstr "Mauritius"
 
 #: django_country_kit/data.py:176
 msgid "Mayotte"
-msgstr "Mayotte"
+msgstr "Majotta"
 
 #: django_country_kit/data.py:177
 msgid "Mexico"
-msgstr "Mexiko"
+msgstr "Meksyk"
 
 #: django_country_kit/data.py:178
 msgid "Micronesia, Federated States of"
-msgstr "Mikronesien, Föderierte Staaten von"
+msgstr "Mikronezja, Stany Zjednoczone"
 
 #: django_country_kit/data.py:179
 msgid "Moldova, Republic of"
-msgstr "Moldau, Republik"
+msgstr "Mołdawia, Republika"
 
 #: django_country_kit/data.py:180
 msgid "Monaco"
-msgstr "Monaco"
+msgstr "Monako"
 
 #: django_country_kit/data.py:181
 msgid "Mongolia"
-msgstr "Mongolei"
+msgstr "Mongolia"
 
 #: django_country_kit/data.py:182
 msgid "Montenegro"
-msgstr "Montenegro"
+msgstr "Czarnogóra"
 
 #: django_country_kit/data.py:183
 msgid "Montserrat"
@@ -619,15 +619,15 @@ msgstr "Montserrat"
 
 #: django_country_kit/data.py:184
 msgid "Morocco"
-msgstr "Marokko"
+msgstr "Maroko"
 
 #: django_country_kit/data.py:185
 msgid "Mozambique"
-msgstr "Mosambik"
+msgstr "Mozambik"
 
 #: django_country_kit/data.py:186
 msgid "Myanmar"
-msgstr "Myanmar"
+msgstr "Mjanma"
 
 #: django_country_kit/data.py:187
 msgid "Namibia"
@@ -643,23 +643,23 @@ msgstr "Nepal"
 
 #: django_country_kit/data.py:190
 msgid "Netherlands"
-msgstr "Niederlande"
+msgstr "Holandia"
 
 #: django_country_kit/data.py:191
 msgid "Netherlands Antilles"
-msgstr "Niederländische Antillen"
+msgstr "Antyle Holenderskie"
 
 #: django_country_kit/data.py:192
 msgid "New Caledonia"
-msgstr "Neukaledonien"
+msgstr "Nowa Kaledonia"
 
 #: django_country_kit/data.py:193
 msgid "New Zealand"
-msgstr "Neuseeland"
+msgstr "Nowa Zelandia"
 
 #: django_country_kit/data.py:194
 msgid "Nicaragua"
-msgstr "Nicaragua"
+msgstr "Nikaragua"
 
 #: django_country_kit/data.py:195
 msgid "Niger"
@@ -675,15 +675,15 @@ msgstr "Niue"
 
 #: django_country_kit/data.py:198
 msgid "Norfolk Island"
-msgstr "Norfolkinsel"
+msgstr "Wyspa Norfolk"
 
 #: django_country_kit/data.py:199
 msgid "Northern Mariana Islands"
-msgstr "Nördliche Marianen"
+msgstr "Mariany Północne"
 
 #: django_country_kit/data.py:200
 msgid "Norway"
-msgstr "Norwegen"
+msgstr "Norwegia"
 
 #: django_country_kit/data.py:201
 msgid "Oman"
@@ -699,7 +699,7 @@ msgstr "Palau"
 
 #: django_country_kit/data.py:204
 msgid "Palestinian Territory, Occupied"
-msgstr "Palästinensisches Gebiet, besetzt"
+msgstr "Terytorium Palestyńskie, Okupowane"
 
 #: django_country_kit/data.py:205
 msgid "Panama"
@@ -707,11 +707,11 @@ msgstr "Panama"
 
 #: django_country_kit/data.py:206
 msgid "Papua New Guinea"
-msgstr "Papua-Neuguinea"
+msgstr "Papua-Nowa Gwinea"
 
 #: django_country_kit/data.py:207
 msgid "Paraguay"
-msgstr "Paraguay"
+msgstr "Paragwaj"
 
 #: django_country_kit/data.py:208
 msgid "Peru"
@@ -719,23 +719,23 @@ msgstr "Peru"
 
 #: django_country_kit/data.py:209
 msgid "Philippines"
-msgstr "Philippinen"
+msgstr "Filipiny"
 
 #: django_country_kit/data.py:210
 msgid "Pitcairn"
-msgstr "Pitcairninseln"
+msgstr "Pitcairn"
 
 #: django_country_kit/data.py:211
 msgid "Poland"
-msgstr "Polen"
+msgstr "Polska"
 
 #: django_country_kit/data.py:212
 msgid "Portugal"
-msgstr "Portugal"
+msgstr "Portugalia"
 
 #: django_country_kit/data.py:213
 msgid "Puerto Rico"
-msgstr "Puerto Rico"
+msgstr "Portoryko"
 
 #: django_country_kit/data.py:214
 msgid "Qatar"
@@ -743,39 +743,39 @@ msgstr "Katar"
 
 #: django_country_kit/data.py:215
 msgid "Reunion"
-msgstr "Réunion"
+msgstr "Reunion"
 
 #: django_country_kit/data.py:216
 msgid "Romania"
-msgstr "Rumänien"
+msgstr "Rumunia"
 
 #: django_country_kit/data.py:217
 msgid "Russian Federation"
-msgstr "Russische Föderation"
+msgstr "Federacja Rosyjska"
 
 #: django_country_kit/data.py:218
 msgid "Rwanda"
-msgstr "Ruanda"
+msgstr "Rwanda"
 
 #: django_country_kit/data.py:219
 msgid "Saint Helena"
-msgstr "St. Helena"
+msgstr "Święta Helena"
 
 #: django_country_kit/data.py:220
 msgid "Saint Kitts and Nevis"
-msgstr "St. Kitts und Nevis"
+msgstr "Saint Kitts i Nevis"
 
 #: django_country_kit/data.py:221
 msgid "Saint Lucia"
-msgstr "St. Lucia"
+msgstr "Saint Lucia"
 
 #: django_country_kit/data.py:222
 msgid "Saint Pierre and Miquelon"
-msgstr "St. Pierre und Miquelon"
+msgstr "Saint Pierre i Miquelon"
 
 #: django_country_kit/data.py:223
 msgid "Saint Vincent and the Grenadines"
-msgstr "St. Vincent und die Grenadinen"
+msgstr "Saint Vincent i Grenadyny"
 
 #: django_country_kit/data.py:224
 msgid "Samoa"
@@ -787,11 +787,11 @@ msgstr "San Marino"
 
 #: django_country_kit/data.py:226
 msgid "Sao Tome and Principe"
-msgstr "São Tomé und Príncipe"
+msgstr "Wyspy Świętego Tomasza i Książęca"
 
 #: django_country_kit/data.py:227
 msgid "Saudi Arabia"
-msgstr "Saudi-Arabien"
+msgstr "Arabia Saudyjska"
 
 #: django_country_kit/data.py:228
 msgid "Senegal"
@@ -799,11 +799,11 @@ msgstr "Senegal"
 
 #: django_country_kit/data.py:229
 msgid "Serbia"
-msgstr "Serbien"
+msgstr "Serbia"
 
 #: django_country_kit/data.py:230
 msgid "Seychelles"
-msgstr "Seychellen"
+msgstr "Seszele"
 
 #: django_country_kit/data.py:231
 msgid "Sierra Leone"
@@ -815,15 +815,15 @@ msgstr "Singapur"
 
 #: django_country_kit/data.py:233
 msgid "Slovakia"
-msgstr "Slowakei"
+msgstr "Słowacja"
 
 #: django_country_kit/data.py:234
 msgid "Slovenia"
-msgstr "Slowenien"
+msgstr "Słowenia"
 
 #: django_country_kit/data.py:235
 msgid "Solomon Islands"
-msgstr "Salomonen"
+msgstr "Wyspy Salomona"
 
 #: django_country_kit/data.py:236
 msgid "Somalia"
@@ -831,15 +831,15 @@ msgstr "Somalia"
 
 #: django_country_kit/data.py:237
 msgid "South Africa"
-msgstr "Südafrika"
+msgstr "Republika Południowej Afryki"
 
 #: django_country_kit/data.py:238
 msgid "South Georgia and the South Sandwich Islands"
-msgstr "Südgeorgien und die Südlichen Sandwichinseln"
+msgstr "Georgia Południowa i Sandwich Południowy"
 
 #: django_country_kit/data.py:239
 msgid "Spain"
-msgstr "Spanien"
+msgstr "Hiszpania"
 
 #: django_country_kit/data.py:240
 msgid "Sri Lanka"
@@ -851,47 +851,47 @@ msgstr "Sudan"
 
 #: django_country_kit/data.py:242
 msgid "Suriname"
-msgstr "Suriname"
+msgstr "Surinam"
 
 #: django_country_kit/data.py:243
 msgid "Svalbard and Jan Mayen"
-msgstr "Svalbard und Jan Mayen"
+msgstr "Svalbard i Jan Mayen"
 
 #: django_country_kit/data.py:244
 msgid "Swaziland"
-msgstr "Swasiland"
+msgstr "Eswatini"
 
 #: django_country_kit/data.py:245
 msgid "Sweden"
-msgstr "Schweden"
+msgstr "Szwecja"
 
 #: django_country_kit/data.py:246
 msgid "Switzerland"
-msgstr "Schweiz"
+msgstr "Szwajcaria"
 
 #: django_country_kit/data.py:247
 msgid "Syrian Arab Republic"
-msgstr "Syrische Arabische Republik"
+msgstr "Republika Arabska Syrii"
 
 #: django_country_kit/data.py:248
 msgid "Taiwan, Province of China"
-msgstr "Taiwan, Provinz China"
+msgstr "Tajwan, prowincja Chin"
 
 #: django_country_kit/data.py:249
 msgid "Tajikistan"
-msgstr "Tadschikistan"
+msgstr "Tadżykistan"
 
 #: django_country_kit/data.py:250
 msgid "Tanzania, United Republic of"
-msgstr "Tansania, Vereinigte Republik"
+msgstr "Zjednoczona Republika Tanzanii"
 
 #: django_country_kit/data.py:251
 msgid "Thailand"
-msgstr "Thailand"
+msgstr "Tajlandia"
 
 #: django_country_kit/data.py:252
 msgid "Timor-Leste"
-msgstr "Timor-Leste"
+msgstr "Timor Wschodni"
 
 #: django_country_kit/data.py:253
 msgid "Togo"
@@ -907,15 +907,15 @@ msgstr "Tonga"
 
 #: django_country_kit/data.py:256
 msgid "Trinidad and Tobago"
-msgstr "Trinidad und Tobago"
+msgstr "Trynidad i Tobago"
 
 #: django_country_kit/data.py:257
 msgid "Tunisia"
-msgstr "Tunesien"
+msgstr "Tunezja"
 
 #: django_country_kit/data.py:258
 msgid "Türkiye"
-msgstr "Türkei"
+msgstr "Türkiye"
 
 #: django_country_kit/data.py:259
 msgid "Turkmenistan"
@@ -923,7 +923,7 @@ msgstr "Turkmenistan"
 
 #: django_country_kit/data.py:260
 msgid "Turks and Caicos Islands"
-msgstr "Turks- und Caicosinseln"
+msgstr "Turks i Caicos"
 
 #: django_country_kit/data.py:261
 msgid "Tuvalu"
@@ -935,31 +935,31 @@ msgstr "Uganda"
 
 #: django_country_kit/data.py:263
 msgid "Ukraine"
-msgstr "Ukraine"
+msgstr "Ukraina"
 
 #: django_country_kit/data.py:264
 msgid "United Arab Emirates"
-msgstr "Vereinigte Arabische Emirate"
+msgstr "Zjednoczone Emiraty Arabskie"
 
 #: django_country_kit/data.py:265
 msgid "United Kingdom"
-msgstr "Vereinigtes Königreich"
+msgstr "Wielka Brytania"
 
 #: django_country_kit/data.py:266
 msgid "United States"
-msgstr "Vereinigte Staaten"
+msgstr "Stany Zjednoczone"
 
 #: django_country_kit/data.py:267
 msgid "United States Minor Outlying Islands"
-msgstr "Amerikanische Überseeinseln"
+msgstr "Dalekie Wyspy Mniejsze Stanów Zjednoczonych"
 
 #: django_country_kit/data.py:268
 msgid "Uruguay"
-msgstr "Uruguay"
+msgstr "Urugwaj"
 
 #: django_country_kit/data.py:269
 msgid "Uzbekistan"
-msgstr "Usbekistan"
+msgstr "Uzbekistan"
 
 #: django_country_kit/data.py:270
 msgid "Vanuatu"
@@ -967,27 +967,27 @@ msgstr "Vanuatu"
 
 #: django_country_kit/data.py:271
 msgid "Venezuela"
-msgstr "Venezuela"
+msgstr "Wenezuela"
 
 #: django_country_kit/data.py:272
 msgid "Viet Nam"
-msgstr "Vietnam"
+msgstr "Wietnam"
 
 #: django_country_kit/data.py:273
 msgid "Virgin Islands, British"
-msgstr "Jungferninseln, Britische"
+msgstr "Brytyjskie Wyspy Dziewicze"
 
 #: django_country_kit/data.py:274
 msgid "Virgin Islands, U.S."
-msgstr "Jungferninseln, US-"
+msgstr "Wyspy Dziewicze Stanów Zjednoczonych"
 
 #: django_country_kit/data.py:275
 msgid "Wallis and Futuna"
-msgstr "Wallis und Futuna"
+msgstr "Wallis i Futuna"
 
 #: django_country_kit/data.py:276
 msgid "Western Sahara"
-msgstr "Westsahara"
+msgstr "Sahara Zachodnia"
 
 #: django_country_kit/data.py:277
 msgid "Yemen"
@@ -995,8 +995,8 @@ msgstr "Jemen"
 
 #: django_country_kit/data.py:278
 msgid "Zambia"
-msgstr "Sambia"
+msgstr "Zambia"
 
 #: django_country_kit/data.py:279
 msgid "Zimbabwe"
-msgstr "Simbabwe"
+msgstr "Zimbabwe"
