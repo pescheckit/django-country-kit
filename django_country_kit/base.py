@@ -18,6 +18,7 @@ Attributes:
     - Country (class): A class representing a country with properties for accessing its name and alpha3 code.
 """
 from .data import get_countries
+from .nationalities import NATIONALITIES
 
 
 class Country:
@@ -81,3 +82,15 @@ class Country:
             if data['name'] == name:
                 return code
         return ''
+    
+    def get_code_from_nationality(self, nationality: str) -> str: 
+        """
+        Get the country code from the nationality.
+
+        Args:
+            nationality (str): The nationality of the country.
+
+        Returns:
+            str: The country code.
+        """
+        return NATIONALITIES.get(nationality, None)
