@@ -1,16 +1,16 @@
 """
-This module defines a dictionary of nationalities and their corresponding 
+This module defines a dictionary of nationalities and their corresponding
 alpha-2 country codes.
 
-The `NATIONALITIES` dictionary maps each nationality to its respective 
-alpha-2 country code, where the keys are nationality names (in English) 
+The `NATIONALITIES` dictionary maps each nationality to its respective
+alpha-2 country code, where the keys are nationality names (in English)
 and the values are ISO 3166-1 alpha-2 codes.
 
 Example usage:
     - "Afghan" -> "AF"
     - "Åland Island" -> "AX"
 
-The dictionary can be used for looking up the alpha-2 code based on a 
+The dictionary can be used for looking up the alpha-2 code based on a
 given nationality name.
 
 Usage:
