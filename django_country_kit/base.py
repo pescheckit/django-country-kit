@@ -82,8 +82,8 @@ class Country:
             if data['name'] == name:
                 return code
         return ''
-    
-    def get_code_from_nationality(self, nationality: str) -> str: 
+
+    def get_code_from_nationality(self, nationality: str) -> str:
         """
         Get the country code from the nationality.
 
