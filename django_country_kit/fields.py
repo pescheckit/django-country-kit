@@ -73,7 +73,13 @@ class CountryField(CharField):
         self.countries = Country().countries_data
         self.multiple = kwargs.pop('multiple', False)
         self.blank_label = kwargs.pop("blank_label", None)
-        self.choices = kwargs.pop("countries", [(code, data['name']) for code, data in self.countries.items()])
+
+        include_blank = kwargs.get('blank', False)
+
+        self.choices = kwargs.pop("countries", None)
+        if not self.choices:
+            self.choices = self.get_choices(include_blank=include_blank)
+
         kwargs['choices'] = self.choices
         if self.multiple:
             kwargs['max_length'] = len(self.countries) - 1 + sum(len(code) for code in self.countries)
@@ -82,16 +88,21 @@ class CountryField(CharField):
         super().__init__(*args, **kwargs)
 
     def get_choices(self, *args, include_blank=True, blank_choice=None, **kwargs):
-        if blank_choice is None:
-            if self.blank_label is None:
-                blank_choice = BLANK_CHOICE_DASH
-            else:
-                blank_choice = [("", self.blank_label)]
+        """
+        Returns choices with an optional blank choice if include_blank=True.
+        """
         if self.multiple:
             include_blank = False
-        return super().get_choices(
-            *args, include_blank=include_blank, blank_choice=blank_choice, **kwargs
-        )
+
+        if include_blank:
+            if blank_choice is None:
+                blank_choice = [("", self.blank_label)] if self.blank_label else BLANK_CHOICE_DASH
+        else:
+            blank_choice = []
+
+        choices = blank_choice + [(code, data['name']) for code, data in self.countries.items()]
+        
+        return choices
 
     def get_choices_selected(self, arr_choices):
         """
