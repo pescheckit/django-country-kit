@@ -76,9 +76,9 @@ jobs:
       run: python setup.py sdist
 
     - name: Archive distribution package
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: dist
+        name: django50-${{ matrix.python-version }}-dist
         path: dist/*.tar.gz
 
   build_django_42:
@@ -115,9 +115,9 @@ jobs:
       run: python setup.py sdist
 
     - name: Archive distribution package
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: dist
+        name: django42-${{ matrix.python-version }}-dist
         path: dist/*.tar.gz
 
   build_django_32:
@@ -125,7 +125,7 @@ jobs:
     if: github.event_name != 'release'
     strategy:
       matrix:
-        python-version: ["3.7", "3.8", "3.9"]
+        python-version: ["3.8", "3.9"]
         django-version: ["3.2"]
 
     needs: lint
@@ -154,9 +154,9 @@ jobs:
       run: python setup.py sdist
 
     - name: Archive distribution package
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: dist
+        name: django32-${{ matrix.python-version }}-dist
         path: dist/*.tar.gz
 
   deploy:
