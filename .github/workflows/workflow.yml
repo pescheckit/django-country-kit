@@ -125,7 +125,7 @@ jobs:
     if: github.event_name != 'release'
     strategy:
       matrix:
-        python-version: ["3.7", "3.8", "3.9"]
+        python-version: ["3.8", "3.9"]
         django-version: ["3.2"]
 
     needs: lint
