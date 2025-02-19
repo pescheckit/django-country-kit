@@ -87,7 +87,7 @@ class CountryField(CharField):
             kwargs['max_length'] = max(len(code) for code in self.countries)
         super().__init__(*args, **kwargs)
 
-    def get_choices(self, *args, include_blank=True, blank_choice=None, **kwargs):
+    def get_choices(self, *_args, include_blank=True, blank_choice=None, **_kwargs):
         """
         Returns choices with an optional blank choice if include_blank=True.
         """
@@ -101,7 +101,7 @@ class CountryField(CharField):
             blank_choice = []
 
         choices = blank_choice + [(code, data['name']) for code, data in self.countries.items()]
-        
+
         return choices
 
     def get_choices_selected(self, arr_choices):
