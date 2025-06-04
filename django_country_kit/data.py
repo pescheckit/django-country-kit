@@ -67,6 +67,7 @@ DATA = {
     "BG": {"name": _("Bulgaria"), "alpha3": "BGR"},
     "BF": {"name": _("Burkina Faso"), "alpha3": "BFA"},
     "BI": {"name": _("Burundi"), "alpha3": "BDI"},
+    "BL": {"name": _("Saint Barthélemy"), "alpha3": "BLM"},
     "KH": {"name": _("Cambodia"), "alpha3": "KHM"},
     "CM": {"name": _("Cameroon"), "alpha3": "CMR"},
     "CA": {"name": _("Canada"), "alpha3": "CAN"},
