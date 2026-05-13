@@ -39,18 +39,28 @@ class CountrySelectMixin:
     A mixin class to handle common functionalities for country select widgets.
     """
 
-    def __init__(self, attrs=None):
+    def __init__(self, attrs=None, exclude=None, include=None):
         """
         Initialize the widget.
 
         Parameters:
             - attrs (dict): Additional attributes for the widget.
+            - exclude (iterable): Country codes to exclude from the dropdown.
+            - include (iterable): Country codes to restrict the dropdown to.
+              When provided, only these codes (minus ``exclude``) are offered.
         """
         # Ensure attrs is a dictionary
         attrs = attrs or {}
 
-        # Populate choices based on COUNTRIES
-        self.choices = ((code, data['name']) for code, data in Country().countries_data.items())
+        exclude = set(exclude or [])
+        include = set(include or [])
+
+        # Populate choices based on COUNTRIES, applying exclude/include filters
+        self.choices = (
+            (code, data['name'])
+            for code, data in Country().countries_data.items()
+            if code not in exclude and (not include or code in include)
+        )
 
         # Use the superclass to initialize the widget
         super().__init__(attrs=attrs, choices=self.choices)
