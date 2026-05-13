@@ -31,6 +31,7 @@ from django.test import TestCase, override_settings
 from .base import Country
 from .data import DATA
 from .fields import CountryField, MultiSelectList
+from .widgets import CountryWidget, MultipleCountryWidget
 
 logger = logging.getLogger(__name__)
 
@@ -122,6 +123,55 @@ class CountryFieldTests(TestCase):
         with self.assertRaises(exceptions.ValidationError):
             field.validate(invalid_value, None)
         logger.info("test_country_field_validate_method ✓")
+
+    def test_country_field_exclude_kwarg(self):
+        """
+        Test that the per-field ``exclude`` kwarg filters those codes out
+        without touching project-wide settings.
+        """
+        field = CountryField(exclude=["US", "CA"])
+        codes = [code for code, _ in field.choices]
+        self.assertNotIn("US", codes)
+        self.assertNotIn("CA", codes)
+        self.assertEqual(len(codes), len(DATA) - 2)
+        logger.info("test_country_field_exclude_kwarg ✓")
+
+    def test_country_field_include_kwarg(self):
+        """
+        Test that the per-field ``include`` kwarg restricts choices to the
+        listed codes.
+        """
+        field = CountryField(include=["US", "CA", "NL"])
+        codes = [code for code, _ in field.choices]
+        self.assertEqual(sorted(codes), ["CA", "NL", "US"])
+        logger.info("test_country_field_include_kwarg ✓")
+
+    def test_country_field_include_and_exclude_kwarg(self):
+        """
+        Test that ``include`` and ``exclude`` can be combined; exclusion wins.
+        """
+        field = CountryField(include=["US", "CA", "NL"], exclude=["CA"])
+        codes = [code for code, _ in field.choices]
+        self.assertEqual(sorted(codes), ["NL", "US"])
+        logger.info("test_country_field_include_and_exclude_kwarg ✓")
+
+    def test_country_widget_exclude_kwarg(self):
+        """
+        Test that the widget honours ``exclude`` when used directly.
+        """
+        widget = CountryWidget(exclude=["US"])
+        codes = [code for code, _ in widget.choices]
+        self.assertNotIn("US", codes)
+        logger.info("test_country_widget_exclude_kwarg ✓")
+
+    def test_multiple_country_widget_include_kwarg(self):
+        """
+        Test that the multiple widget honours ``include`` when used directly.
+        """
+        widget = MultipleCountryWidget(include=["US", "CA"])
+        codes = [code for code, _ in widget.choices]
+        self.assertEqual(sorted(codes), ["CA", "US"])
+        logger.info("test_multiple_country_widget_include_kwarg ✓")
 
     def test_country_by_name(self):
         """

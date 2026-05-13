@@ -69,10 +69,31 @@ class CountryField(CharField):
         Args:
             *args: Variable length argument list.
             **kwargs: Arbitrary keyword arguments.
+
+        Keyword Args:
+            multiple (bool): Whether multiple country selections are allowed.
+            blank_label (str): Label used for the blank choice.
+            countries (list): Pre-built list of (code, name) choices that
+                bypasses the default country data and any include/exclude filtering.
+            exclude (iterable): Country codes to exclude from this field's
+                choices. Applied on top of the project-wide ``EXCLUDE_COUNTRIES``
+                setting but only affects this field.
+            include (iterable): Country codes to restrict this field's choices
+                to. When provided, only these codes (intersected with available
+                country data and minus ``exclude``) are offered.
         """
         self.countries = Country().countries_data
         self.multiple = kwargs.pop('multiple', False)
         self.blank_label = kwargs.pop("blank_label", None)
+        self.exclude = list(kwargs.pop("exclude", []) or [])
+        self.include = list(kwargs.pop("include", []) or [])
+
+        if self.exclude or self.include:
+            self.countries = {
+                code: data for code, data in self.countries.items()
+                if code not in self.exclude
+                and (not self.include or code in self.include)
+            }
 
         include_blank = kwargs.get('blank', False)
 

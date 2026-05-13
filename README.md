@@ -55,6 +55,23 @@ class YourModel(models.Model):
     countries = CountryField(multiple=True)
 ```
 
+To exclude or restrict the available countries on a single field (without
+changing project-wide settings):
+
+```python
+from django.db import models
+from django_country_kit.fields import CountryField
+
+class YourModel(models.Model):
+    # Drop a few countries from the dropdown
+    country = CountryField(exclude=["US", "CA"])
+
+    # Or restrict the dropdown to an allow-list
+    shipping_country = CountryField(include=["NL", "DE", "FR"])
+```
+
+`exclude` and `include` can be combined; `exclude` always wins.
+
 
 ### Country Widget
 
@@ -75,6 +92,16 @@ from django_country_kit.widgets import MultipleCountryWidget
 
 class YourForm(forms.Form):
     countries = forms.CharField(widget=MultipleCountryWidget())
+```
+
+Both widgets accept `exclude` and `include` kwargs for per-widget filtering:
+
+```python
+from django import forms
+from django_country_kit.widgets import CountryWidget
+
+class YourForm(forms.Form):
+    country = forms.CharField(widget=CountryWidget(exclude=["US", "CA"]))
 ```
 
 ## Country Class
@@ -107,6 +134,10 @@ Django Country Kit provides custom settings for further customization of country
 - `INCLUDE_COUNTRIES`: Allows users to include specific countries in the available choices.
 
 You can customize these settings in your Django project's settings file to tailor the country data according to your needs.
+
+For per-field overrides (rather than project-wide), pass `exclude=` or
+`include=` directly to `CountryField`, `CountryWidget`, or
+`MultipleCountryWidget` — see the usage examples above.
 
 We appreciate your feedback and contributions to improving Django Country Kit!
 
