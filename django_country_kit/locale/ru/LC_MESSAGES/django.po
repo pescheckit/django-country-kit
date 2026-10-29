@@ -546,8 +546,8 @@ msgid "Macao"
 msgstr "Макао"
 
 #: django_country_kit/data.py:166
-msgid "Macedonia, The Former Yugoslav Republic of"
-msgstr "Македония, бывшая Югославская Республика"
+msgid "North Macedonia"
+msgstr "Северная Македония"
 
 #: django_country_kit/data.py:167
 msgid "Madagascar"
