@@ -163,7 +163,7 @@ DATA = {
     "LT": {"name": _("Lithuania"), "alpha3": "LTU"},
     "LU": {"name": _("Luxembourg"), "alpha3": "LUX"},
     "MO": {"name": _("Macao"), "alpha3": "MAC"},
-    "MK": {"name": _("Macedonia, The Former Yugoslav Republic of"), "alpha3": "MKD"},
+    "MK": {"name": _("North Macedonia"), "alpha3": "MKD"},
     "MG": {"name": _("Madagascar"), "alpha3": "MDG"},
     "MW": {"name": _("Malawi"), "alpha3": "MWI"},
     "MY": {"name": _("Malaysia"), "alpha3": "MYS"},
