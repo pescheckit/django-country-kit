@@ -1,4 +1,4 @@
 include *.rst
 include LICENSE
-include django_country_kit/locale
+recursive-include django_country_kit/locale *.po *.mo
 exclude tox.ini
