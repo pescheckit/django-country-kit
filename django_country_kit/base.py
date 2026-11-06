@@ -17,7 +17,7 @@ Example:
 Attributes:
     - Country (class): A class representing a country with properties for accessing its name and alpha3 code.
 """
-from .data import get_countries
+from .data import HISTORICAL, get_countries
 from .nationalities import NATIONALITIES
 
 
@@ -56,7 +56,7 @@ class Country:
     @property
     def name(self) -> str:
         """Get the name of the country."""
-        return self._countries_data.get(self._code, {}).get('name', '')
+        return self._data().get('name', '')
 
     @property
     def code(self) -> str:
@@ -66,7 +66,10 @@ class Country:
     @property
     def alpha3(self) -> str:
         """Get the alpha3 code of the country."""
-        return self._countries_data.get(self._code, {}).get('alpha3', '')
+        return self._data().get('alpha3', '')
+
+    def _data(self) -> dict:
+        return self._countries_data.get(self._code) or HISTORICAL.get(self._code, {})
 
     def get_code_from_name(self, name: str) -> str:
         """
