@@ -182,6 +182,15 @@ class CountryFieldTests(TestCase):
         self.assertEqual(country.code, "US")
         logger.info("test_country_by_name ✓")
 
+    def test_historical_country_not_selectable_but_named(self):
+        """
+        Test that a withdrawn code is not a choice but still resolves to its name.
+        """
+        self.assertNotIn("AN", CountryField().countries)
+        self.assertEqual(Country(code="AN").name, "Netherlands Antilles")
+        self.assertEqual(Country(code="AN").alpha3, "ANT")
+        logger.info("test_historical_country_not_selectable_but_named ✓")
+
 
 class MultiSelectListTests(TestCase):
     """
